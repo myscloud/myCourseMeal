@@ -14,7 +14,7 @@ var assert = require('assert');
 var ObjectId = require('mongodb').ObjectID;
 
 
-// Connection to MongoDB
+// Connection Setup to MongoDB
 // need to run mongod first
 var url = 'mongodb://localhost:27017/test';
 MongoClient.connect(url, function(err, dbConnection) {
@@ -26,6 +26,7 @@ MongoClient.connect(url, function(err, dbConnection) {
     });
 });
 
+// ExpressJS Setup
 app.use('/static', express.static(__dirname + '/public'));
 app.use(bodyParser.json({ type: '*/*' }));
 
