@@ -2,7 +2,7 @@ var CommentBox = React.createClass({
   render: function() {
     return (
       <div>
-        This is an CommentBox KUY.
+        This is an CommentBox.
       </div>
     );
   }
