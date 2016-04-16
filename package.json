@@ -1,0 +1,42 @@
+{
+  "name": "mycoursemeal",
+  "version": "1.0.0",
+  "description": "The Hungry Manager of CU Students [>|..|<]",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myscloud/myCourseMeal.git"
+  },
+  "keywords": [
+    "hungry"
+  ],
+  "author": "c3mx, kamkam, maw",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/myscloud/myCourseMeal/issues"
+  },
+  "homepage": "https://github.com/myscloud/myCourseMeal#readme",
+  "dependencies": {
+    "babel-preset-react": "^6.5.0",
+    "babelify": "^7.2.0",
+    "body-parser": "^1.15.0",
+    "browserify": "^13.0.0",
+    "express": "^4.13.4",
+    "gulp": "^3.9.1",
+    "history": "^2.0.2",
+    "jquery": "^2.2.3",
+    "mongodb": "^2.1.16",
+    "react": "^15.0.1",
+    "react-bootstrap": "^0.28.5",
+    "react-dom": "^15.0.1",
+    "react-router": "^2.2.4",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.7.5"
+  }
+}
