@@ -1,2 +1,14 @@
-ReactDOM.render(<h1>Hello, world!</h1>,
-	document.getElementById('main'));
+var CommentBox = React.createClass({
+  render: function() {
+    return (
+      <div>
+        This is an CommentBox KUY.
+      </div>
+    );
+  }
+});
+
+ReactDOM.render(
+  <CommentBox />,
+  document.getElementById('main')
+);
