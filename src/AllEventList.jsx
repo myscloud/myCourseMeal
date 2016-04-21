@@ -2,9 +2,7 @@ import React from 'react';
 import NavLink from './NavLink'
 
 class AllEventList extends React.Component {
-    render() {
-
-    }
+  render() {}
 }
 
 export default AllEventList;
