@@ -36,10 +36,6 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json({ type: '*/*' }));
 
 
-// The Mose Highest Routers Rules Goes Here
-// app.get('/', function (req, res) {
-//   res.sendFile(path.join(__dirname, 'public', 'index.html'))
-// })
 app.get('*', function (req, res) {
   //res.render('index');
   res.sendFile(path.join(__dirname, 'public/index.html'));

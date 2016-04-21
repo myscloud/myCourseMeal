@@ -2,7 +2,8 @@ import React from 'react';
 
 class NewsFeed extends React.Component {
     render() {
-        return <h1>NEW FEED!</h1> ;
+        return <h1>NEW FEED!</h1>
+        ;
     }
 }
 
