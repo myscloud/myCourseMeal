@@ -15,8 +15,11 @@ gulp.task('buildES6', function () {
 gulp.task('watch', ['buildES6'], function () {
   console.log("File Changes Detected : Recompiling Frontend . . .");
     gulp.watch('src/*.jsx', ['buildES6']);
-    gulp.watch('*.js');
-    nodemon({script: 'server.js', watch: 'src'});
+    gulp.watch('*.js',function(){
+      console.log('JS FILE Changes DETECTED')
+
+    });
+    nodemon({script: 'server.js'});
 });
 
 gulp.task('default', ['watch']);
