@@ -18,7 +18,7 @@ class MainApp extends React.Component {
             <NavLink to="/" onlyActiveOnIndex>Home</NavLink>
           </li>
           <li>
-            <NavLink to="/newsfeed">newsfeed</NavLink>
+            <NavLink to="/create">create</NavLink>
           </li>
           <li>
             <NavLink to="/welcome">welcomepage</NavLink>

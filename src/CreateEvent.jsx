@@ -21,7 +21,7 @@ export default CreateEvent;
 class EventForm extends React.Component {
 
   handleFormSubmit(event) {
-      console.log("Event Fire")
+      console.log(event)
   }
 
   render() {
