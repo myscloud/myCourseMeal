@@ -46,6 +46,12 @@ app.get('/', function (req, res) {
 
 // Database transaction
 
+app.post('/api/allPartyInApp', function(req, res) {
+  db.collection('party').find().toArray(function(err, doc) {
+    res.json(doc);
+  });
+});
+
 app.post('/api/allParty', function(req, res) {
   var friends = req.body.friends;
   db.collection('party').find({owner: {$all: friends}}).toArray(function(err, doc) {
@@ -53,10 +59,10 @@ app.post('/api/allParty', function(req, res) {
   });
 });
 
-app.post('api/myParty', function(req, res) {
+app.post('/api/myParty', function(req, res) {
   var userId = req.body.userId;
   db.collection('party').find(
-      {$or: [{owner: userId}, {hungers: {$elemMatch: userId} }]}
+      {$or: [{owner: userId}, {hungers: {$elemMatch: {hungerId: userId} } }]}
     ).toArray(function(err, doc) {
       res.json(doc);
     });
