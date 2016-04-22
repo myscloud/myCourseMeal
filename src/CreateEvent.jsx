@@ -9,7 +9,7 @@ class CreateEvent extends React.Component {
   render() {
     return (
       <div>
-        <h1>Create An Event</h1>
+        <h1>Create An Eventttt</h1>
         <EventForm/>
       </div>
     );
