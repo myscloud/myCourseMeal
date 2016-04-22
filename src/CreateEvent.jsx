@@ -50,12 +50,13 @@ class EventForm extends React.Component {
 
   handleFormSubmit(e) {
     e.preventDefault();
+    console.log(this.state);
     //Perform Ajax Transmission
     $.ajax({
-      url: './createEvent',
+      url: './api/addParty',
       dataType: 'json',
       type: 'POST',
-      data: this.state,
+      data: JSON.stringify(this.state),
       success: function(data) {
         this.setState({data: data});
         console.log("REDIRECT !!");
