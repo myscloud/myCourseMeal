@@ -40,7 +40,7 @@ class MainApp extends React.Component {
           <button onClick={this.userLogout.bind(this)}>Log out</button>
         </div>;
       }else{
-        render(
+        return(
         <div>
         <h1> You are not Logged in </h1>
         <FacebookLogin
