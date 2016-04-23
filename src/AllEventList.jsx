@@ -1,6 +1,8 @@
 import React from 'react';
 import NavLink from './NavLink'
 
+import EventDiscussion  from './EventDiscussion' // Chat in the event <- FB 
+
 class AllEventList extends React.Component {
 
    constructor(props) {
@@ -10,10 +12,17 @@ class AllEventList extends React.Component {
    	 };
    }
 
+   componentDidMount() {
+    FB.api('/me', function(response) {
+      this.setState({owner: response.id});
+      console.log(response.id);
+    }.bind(this)); 
+  }
+
   render() {
   	console.log(this.state.data);
   	let events = this.state.data.map((party =>  {
-  		return <EventCard place={party.place} pdate={party.date} ptime={party.time} owner={party.owner} />;
+  		return <EventCard place={party.place} pdate={party.date} ptime={party.time} owner={party.owner} pic_url={party.pic_url} pid={party._id} />;
   	}));
   	return(
   	<div id="container" className="row">
@@ -24,16 +33,12 @@ class AllEventList extends React.Component {
 		<div id = "contentBox" className = "col-xs-8 col-sm-8 col-lg-8 ">
 			{events}
 		</div>
-		
-
-		
 		<div className = "col-xs-1 col-sm-1 col-lg-1"></div>
 	</div>
 	);
   }
 
   componentDidMount() {
-  	console.log("testka");
     //Perform Ajax Transmission
     $.ajax({
     url: './api/allPartyInApp',
@@ -42,7 +47,6 @@ class AllEventList extends React.Component {
     data: JSON.stringify({userId: 10206121107369936}),
     success: function(data) {
         this.setState({data: data});
-        console.log(data);
       }.bind(this)
     });
   }
@@ -54,26 +58,24 @@ class EventCard extends React.Component{
 		super(props);
 		this.state = {
 			userName: '',
-			userPhoto: ''
+			userPhoto: '',
 		};
 	}
 
 	componentDidMount() {
-		console.log("will update");
 	  	FB.api('/' + this.props.owner, function(response) {
 	  		this.setState({userName: response.name});
 	  	}.bind(this));
 	  	FB.api('/' + this.props.owner + "/picture", function(response) {
 	  		this.setState({userPhoto: response.data['url']});
 	  	}.bind(this));
-	  	console.log(JSON.stringify(this.state));
 	  }
 
-	render(){
+	render() {
 		return(
 			<div className ="content row whiteBg">
 				<div className = "foodPicDiv col-xs-4 col-sm-4 col-lg-4">
-					<img src = "./img/bbq.jpg" className = "foodPic"/>
+					<img src = {this.props.pic_url} className = "foodPic" onerror="this.src='./img/bbq.jpg'"/>
 				</div>
 				<div className = "contentDetail col-xs-8 col-sm-8 col-lg-8">
 					<div className ="contentDetailText">
@@ -87,12 +89,11 @@ class EventCard extends React.Component{
 					</div>
 					<br/><br/>
 					<div className ="contentDetailButGr">
-						<button type="button" className="btn btn-info" data-toggle="modal" data-target="#comment">Comment </button>
+						<EventDiscussion partyId={this.props.pid} />
 						<button type="button" className="btn btn-warning" data-toggle="modal" data-target="#hungerList">Hungers </button>
 					</div>
 				</div>
 			</div>
-			
 			);
 	}
 }

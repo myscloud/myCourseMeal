@@ -45,6 +45,7 @@ app.get('/', function (req, res) {
 });
 
 // Database transaction
+var ObjectID = require('mongodb').ObjectID;
 
 app.post('/api/allPartyInApp', function(req, res) {
   db.collection('party').find().toArray(function(err, doc) {
@@ -101,23 +102,27 @@ app.post('/api/deleteParty', function(req, res) {
     );
 });
 
+app.post('/api/getComments', function(req, res) {
+  var partyId = req.body.partyId;
+  db.collection('party').findOne(
+      {_id: ObjectID(partyId)},
+      {comments: 1},
+      function(err, doc) {
+        res.json(doc);
+    });
+});
+
 app.post('/api/commentOnParty', function(req, res) {
   var partyId = req.body.partyId;
   var commenter = req.body.commenter;
   var content = req.body.commentContent;
   db.collection('party').update(
-      {_id: partyId},
+      {_id: ObjectID(partyId)},
       {$addToSet: {comments: 
         {commenter: commenter, content: content}
       }},
       function(err, result) {
-        var newId = result.insertedId;
-        db.collection('party').update(
-          {_id: partyId, "comments._id": newId},
-          { $currentDate: {
-            "comments.$.commentDate": true
-          }}
-          );
+        res.json({success: true});
         }
     );
 });

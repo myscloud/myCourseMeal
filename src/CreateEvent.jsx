@@ -59,8 +59,7 @@ class EventForm extends React.Component {
 
   handleFormSubmit(e) {
     e.preventDefault();
-    console.log(JSON.stringify(this.state));
-     
+
     //Perform Ajax Transmission
     $.ajax({
       url: './api/addParty',
@@ -81,7 +80,8 @@ class EventForm extends React.Component {
       max_person: '',
       price: '',
       pic_url: '',
-      date: ''});
+      date: '',
+      time: ''});
 
   }
 
@@ -111,7 +111,7 @@ class EventForm extends React.Component {
       <br/>
       <div className = "row">
       <div className ="col-xs-1 col-sm-1 col-lg-1"></div>
-      <div className="createTime col-xs-4 col-sm-4 col-lg-4"><span className ="bold">Time </span> : </div><input type="text" value={this.state.time} onChange={this.handleTimeChange.bind(this)} className="form-control createInput"></input>
+      <div className="createTime col-xs-4 col-sm-4 col-lg-4"><span className ="bold">Time </span> : </div><input type="text" value={this.state.time} onChange={this.handleTimeChange.bind(this)} value={this.state.time} className="form-control createInput"></input>
       </div>
       <br/>
       <div className = "row">
