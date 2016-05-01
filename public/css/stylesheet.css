@@ -1,0 +1,208 @@
+a{
+	text-decoration: none;
+}
+#data-reactroot,#app-container{
+	width: inherit;
+}
+#cmlogo{
+	width:250px;
+	height:50px;
+	margin:0;
+}
+#logo{
+	text-align:center;
+	margin-top:50px;
+}
+#loginBut{
+	margin:auto;padding:10px;
+	width:220px;
+	background-color:#2d4486;
+	border-radius:4px;
+	box-shadow:0 2px 5px 0 rgba(0,0,0,0.3);
+	color:white;
+	font-size:1.1em;
+	font-family:sans-serif;
+}
+#loginButContainer{
+	text-align:center;
+	margin-top:50px;
+}
+#loginFb{
+	vertical-align:middle;
+}
+#fbLogo{
+	width:20px;
+	height:20px;
+	margin-right:5px;
+	vertical-align:middle;
+}
+#loginBackground{
+	margin-top:-50px;
+	text-align:center;
+	background-color: white;
+	height: 150%;
+
+}
+#loginContainer{
+	padding-top:150px;
+}
+#container{
+	max-width:700px;
+	text-align:center;
+	margin:auto;
+}
+#header{
+	position: fixed;
+    width: 100vw;	
+    height : 70px;
+	background-color: white;
+	z-index: 1000;
+}
+#headerLogo{
+	margin-top: 10px;
+	margin-left: 20px;
+	float : left;
+}
+#headerLogoImg{
+	height : 50px;
+}
+#logout{
+	margin-right: 50px;
+}
+#profile{
+	margin-right: 200px;
+}
+#profilePic{
+	margin-top: 10px;
+	height : 50px;
+}
+#logoutPic{
+	height : 50px;
+}
+#profile,#profilePic,#profileName,#logout,#logoutText {
+	display : inline-block;
+}
+#amusementTab{
+	float :right;
+}
+#profileName{
+	margin-left: 20px;
+}
+body{
+	width:100%;
+	max-width: 100%;
+	background-color: #cce6ff !important;
+}
+.content{	
+	height : 300px;
+}
+#container{
+	max-width: 70%;
+	width: 70%;
+	margin-top:80px;
+	display: inline-block;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+#menu{
+	color:#ffa200;
+	display: inline-block;
+	right: 60px; 
+    top: 80px;
+	position :fixed;
+}
+.menuList{
+	font-size: 2em;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	text-align: left;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.menuIcon{
+	height: 40px;
+	padding-right: 30px;
+
+}
+.foodPicDiv{
+	padding: 0px 0px 0px 0px;
+	height: 100%;
+}
+.foodPic{
+	height: 90%;
+	margin-top: 15px;
+}
+.bold{
+	font-weight: bold;
+}
+.whiteBg{
+	background-color: white;
+}
+.btn{
+	width:20%;
+}
+.detailOwnerPicDiv{
+	height : 30px;
+	display: inline-block;
+}
+.contentDetailText{
+	text-align: left;
+	font-size: 1.5em;
+}
+.modal-header{
+	background-color: #018ada;
+	color:white;
+}
+.btn-blue{
+	background-color: #018ada;
+	color:white;
+	font-weight: bold;
+}
+.createInput{
+	display: inline-block;
+	width :200px;
+}
+.commentInput{
+	display: inline-block;
+	width :400px;
+}
+.close{
+	color: white;
+}
+.modal{
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+.commentProfilePic{
+	height: 50px;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+.commentProfileName{
+	display: inline-block;
+	margin-left: 20px;
+}
+.commentBox{
+	background-color: white;
+	max-height: 200px;
+}
+#commentBody{
+	background-color: #cce6ff;
+}
+.commentText{
+	margin-left: 10px;
+	margin-right: 10px;
+	padding-bottom: 10px;
+}
+.hungerProfilePic{
+	height: 50px;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+.hungerProfileName{
+	display: inline-block;
+	margin-left: 20px;
+	font-size: 1.2em;
+	font-weight: bold;
+	min-width: 300px;
+}
+.kick{
+	width: 50px;
+}
