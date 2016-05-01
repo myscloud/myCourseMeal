@@ -28,7 +28,7 @@ render((
   <Provider store = {store}>
     <Router history={browserHistory}>
       <Route path="/" component={MainApp} onEnter ={checkLogin}>
-        <IndexRoute component={WelcomePage}/>
+        <IndexRoute component={AllEventList}/>
         <Route path="/welcome"          component={WelcomePage}/>
         <Route path="/create"           component={CreateEvent}/>
         <Route path="/allEvent"         component={AllEventList}/>
